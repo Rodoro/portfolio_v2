@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths-ignore: .github/workflows/**
+
+jobs:
+  test:
+    name: 'Test project'
+    uses: 'rodoro/portfolio_v2/.github/workflows/testing.yaml@master'
+  
+  deploy: 
+    needs: test
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      name: Build project
+      run: npm run build
