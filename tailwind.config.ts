@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ["var(--font-family-roboto)"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
