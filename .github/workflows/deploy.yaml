@@ -32,13 +32,10 @@ jobs:
           git fetch origin
           git reset --hard origin/${{ github.ref_name }}
 
-          which node
-          node -v
-          
-          npm ci --prefer-offline
-          npm dedupe
+          /home/devserver/.nvm/versions/node/v22.11.0/bin/npm ci --prefer-offline
+          /home/devserver/.nvm/versions/node/v22.11.0/bin/npm dedupe
 
-          npm run build
+          /home/devserver/.nvm/versions/node/v22.11.0/bin/npm run build
 
           pm2 restart ecosystem.config.js
           pm2 save
