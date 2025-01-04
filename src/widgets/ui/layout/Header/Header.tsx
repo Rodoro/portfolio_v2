@@ -1,7 +1,6 @@
 import { Button } from '@/shared/ui/button'
 import CustomLink from '@/shared/ui/Link'
 import Logo from '@/shared/ui/Logo'
-import React from 'react'
 
 export default function Header() {
     return (
