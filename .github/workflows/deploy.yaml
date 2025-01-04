@@ -26,7 +26,7 @@ jobs:
         password: ${{ secrets.DEV_SSH_PASSWORT }}
 
         script: |
-          cd /home/front/portfolio
+          cd /front/portfolio
 
           git remote add origin ${{ env.REPO_URL }} 2> /dev/null || git remote set-url origin ${{ env.REPO_URL }}
           git fetch origin
