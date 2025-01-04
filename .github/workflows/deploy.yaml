@@ -32,6 +32,9 @@ jobs:
           git fetch origin
           git reset --hard origin/${{ github.ref_name }}
 
+          which node
+          node -v
+          
           npm ci --prefer-offline
           npm dedupe
 
