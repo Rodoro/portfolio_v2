@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Roboto_Flex } from "next/font/google";
+import Header from "@/widgets/ui/layout/Header/Header";
 
 const roboto = Roboto_Flex({
   subsets: ["latin"],
@@ -21,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable}`}>
+      <body className={`${roboto.variable} flex flex-col items-center max-w-[1440px] mx-auto mt-7`}>
+        <Header />
         {children}
       </body>
     </html>
