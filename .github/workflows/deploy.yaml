@@ -14,8 +14,29 @@ jobs:
   deploy: 
     needs: test
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
 
     steps:
-    - name: Build project
-      run: npm run build
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v1.0.3
+      env:
+        REPO_URL: https://${{ github.repository_owner }}:${{ github.token }}@github.com/${{ github.repository }}.git
+      with:
+        host: ${{ secrets.DEV_SSH_HOST }}
+        username: ${{ secrets.DEV_SSH_USER }}
+        password: ${{ secrets.PASSWORT }}
+
+        script: |
+          cd /home/front/portfolio
+
+          git remote add origin ${{ env.REPO_URL }} 2> /dev/null || git remote set-url origin ${{ env.REPO_URL }}
+          git fetch origin
+          git reset --hard origin/${{ github.ref_name }}
+
+          npm ci --prefer-offline
+          npm dedupe
+
+          npm run build
+
+          pm2 restart ecosystem.config.js
+          pm2 save
