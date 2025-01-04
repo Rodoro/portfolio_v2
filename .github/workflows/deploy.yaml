@@ -24,7 +24,7 @@ jobs:
       with:
         host: ${{ secrets.DEV_SSH_HOST }}
         username: ${{ secrets.DEV_SSH_USER }}
-        password: ${{ secrets.PASSWORT }}
+        password: ${{ secrets.DEV_SSH_PASSWORT }}
 
         script: |
           cd /home/front/portfolio
