@@ -1,11 +1,11 @@
-import { Button } from '@/shared/ui/button'
+
 import styles from './About.module.css'
 
 export default function About() {
     return (
         <section className={`w-full ${styles.section_about}`}>
-            {/* //TODO: Исправить позиционирование фона */}
-            <h1 className='text-7xl font-bold leading-tight'>
+            {/* //TODO: Исправить позиционирование фона и его скейл*/}
+            {/* <h1 className='text-7xl font-bold leading-tight'>
                 Hi there!<br />
                 I`m <span className='text-accent'>Danya &quot;Rodoro&quot;</span><br />
                 <span>
@@ -48,7 +48,7 @@ export default function About() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
 
         </section>
     )

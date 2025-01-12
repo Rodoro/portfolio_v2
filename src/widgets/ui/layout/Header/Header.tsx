@@ -7,7 +7,7 @@ export default function Header() {
         <header className='flex items-center justify-between w-full'>
             <Logo />
             <nav className='flex w-full items-center justify-end gap-16'>
-                <ul className='flex  text-2xl gap-16'>
+                <ul className='flex  text-xl gap-16'>
                     <li>
                         <CustomLink href='/#services'>
                             Services
